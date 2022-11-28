@@ -1,0 +1,15 @@
+.main-contanier .main-title {
+  color: gray;
+}
+.main-contanier .main-align-contanier {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+}
+.main-contanier .main-align-contanier .border-radius {
+  border: 1px solid rgb(224, 224, 224);
+  height: auto;
+  width: 800px;
+  border-radius: 15px;
+}/*# sourceMappingURL=main.css.map */

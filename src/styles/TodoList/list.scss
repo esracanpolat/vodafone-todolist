@@ -1,0 +1,20 @@
+
+.table-cell{
+        display: inline-flex;
+        justify-content: center; 
+        align-items: center;
+    .text-decation-line{
+        text-decoration: line-through;
+        color: gray;
+    }
+    .text-decation-none{
+        text-decoration: none;
+    }
+}
+.table-cell-handle{
+    display: flex;
+     justify-content: end;
+  .delete-button{
+    color: red;
+}  
+}

@@ -1,0 +1,20 @@
+.table-cell {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.table-cell .text-decation-line {
+  text-decoration: line-through;
+  color: gray;
+}
+.table-cell .text-decation-none {
+  text-decoration: none;
+}
+
+.table-cell-handle {
+  display: flex;
+  justify-content: end;
+}
+.table-cell-handle .delete-button {
+  color: red;
+}/*# sourceMappingURL=list.css.map */

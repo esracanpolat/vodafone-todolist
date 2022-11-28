@@ -1,0 +1,35 @@
+$w-800px: 800px;
+$bg-red:red;
+$border-style:1px solid rgba(224, 224, 224, 1);
+.CreateTodo-Contanier{
+    width: $w-800px;
+    display: flex;
+    align-items: center;
+ .create-button-grid{  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .create-button{
+        color: white;
+        height: 40px;
+        border-radius: 5px;
+        border: $border-style;
+        width: 80px;
+        background-color: #1976d2;
+    }
+    .create-button:hover{
+        color: white;
+        background-color: #1976d286;
+    }
+}
+ .create-input-grid{
+    width: 100%;
+    .create-input{
+        width: 88%;
+        border-radius: 5px;
+        border: $border-style;
+        padding: 10.5px 11px !important;
+     
+    }
+ }
+}
