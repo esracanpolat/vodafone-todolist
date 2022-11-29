@@ -4,6 +4,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import '../../styles/DataTable/dataTable.scss'
 
 export const DataTable = ({ dataSource, deleteItem, checked }) => {
+
     return (
         <div className='table-border-radius'>
             <TableContainer>

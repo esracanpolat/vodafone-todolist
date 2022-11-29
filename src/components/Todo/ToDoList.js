@@ -21,18 +21,19 @@ export const ToDoList = () => {
         setShowMessage(true);
     }
 
-    function checked(e) {
-        dispatch(updateTodosApiRequest({ id: e.data.id, todo: e.data.todo, isChecked: e.e.target.checked }));
+    function checked(res) {
+        dispatch(updateTodosApiRequest({ id: res.data.id, todo: res.data.todo, isChecked: res.e.target.checked }));
         setShowMessage(true);
     }
-    return (<div className='list-contanier'>
-        <Snackbar
-            open={showMessage}
-            autoHideDuration={3000}
-            onClose={() => setShowMessage(false)}
-            message={message ? message.message : ''}
-        />
-        <DataTable dataSource={todo.todos} deleteItem={deleteItem} checked={checked} />
-    </div>
+    return (
+        <div className='list-contanier'>
+            <Snackbar
+                open={showMessage}
+                autoHideDuration={3000}
+                onClose={() => setShowMessage(false)}
+                message={message ? message.message : ''}
+            />
+            <DataTable dataSource={todo.todos} deleteItem={deleteItem} checked={checked} />
+        </div>
     )
 }
