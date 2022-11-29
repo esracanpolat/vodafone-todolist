@@ -1,7 +1,7 @@
 .main-contanier{
-    display: grid;
     justify-content: center;
     align-items: center;
+    width: 100%;
     .main-title{
         color:gray;
     }
@@ -9,6 +9,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 800px;
+        width: 100%;
     }
 }
