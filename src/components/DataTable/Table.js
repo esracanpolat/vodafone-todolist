@@ -2,8 +2,10 @@ import { IconButton, TableContainer, Table, TableRow, TableCell, Checkbox, Table
 import React from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
 import '../../styles/DataTable/dataTable.scss'
+import DeleteButton from './DeleteButton';
+import { CheckData } from './CheckData';
 
-export const DataTable = ({ dataSource, deleteItem, checked }) => {
+export const DataTable = ({ dataSource }) => {
 
     return (
         <div className='table-border-radius'>
@@ -13,23 +15,10 @@ export const DataTable = ({ dataSource, deleteItem, checked }) => {
                         {dataSource !== undefined && dataSource.map((data, index) =>
                         (<TableRow key={index}>
                             <TableCell>
-                                <div className='table-cell'>
-                                    <div>
-                                        <Checkbox
-                                            checked={data.isChecked}
-                                            onChange={(e) => checked({ e, data })} />
-                                    </div>
-                                    <div>
-                                        <p className={data.isChecked ? 'text-decation-line' : 'text-decation-none'} >{data.todo}</p>
-                                    </div>
-                                </div>
+                                <CheckData todo={data} />
                             </TableCell>
                             <TableCell>
-                                <div className='table-cell-handle'>
-                                    <IconButton aria-label="delete" onClick={() => deleteItem(data)}>
-                                        <DeleteIcon className='delete-button' />
-                                    </IconButton>
-                                </div>
+                                <DeleteButton todo={data} />
                             </TableCell>
                         </TableRow>
                         ))}

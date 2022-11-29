@@ -1,5 +1,3 @@
-import { Box, Grid, Skeleton } from '@mui/material'
-import { Container } from '@mui/system'
 import React from 'react'
 import { ToDoList } from './Todo/ToDoList'
 import "../styles/Main/main.scss"
