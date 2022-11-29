@@ -15,8 +15,7 @@
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "redux-thunk": "^2.4.2",
-    "sass": "^1.56.1",
-    "uuid": "^9.0.0"
+    "sass": "^1.56.1"
   },
   "scripts": {
     "start": "set PORT=3001 && react-scripts start",
