@@ -12,12 +12,4 @@ code {
     monospace;
 }
 
-.create-button{
-  color: white;
-  background-color: blueviolet;
-}
-.border-radius{
-  border: solid black 1px;
-  height: auto;
-  width: auto;
-}
+

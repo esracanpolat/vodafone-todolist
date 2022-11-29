@@ -2,35 +2,31 @@ import * as actionTypes from "../../actions/todo/todoActionTypes";
 
 const initialState = {
     todos: [],
-    filterTodos: [],
-    error: null,
-    success: null
+    message: null,
 }
 export default function todoReducer(state = initialState, action) {
     var newTodos;
     switch (action.type) {
-        case actionTypes.TODO_ADD:
-            newTodos = [...state.todos, action.payload];
-            return { todos: newTodos };
-        case actionTypes.TODO_REMOVE:
+        case actionTypes.ADD_TODO:
+            newTodos = [...state.todos, action.payload.data];
+            return { todos: newTodos, message: action.payload.statusText };
+        case actionTypes.REMOVE_TODO:
             newTodos = state.todos.filter((item) => {
-                return item.Id !== action.payload.Id
+                return item.id !== action.payload.id
             });
-            return { todos: newTodos };
+            return { todos: newTodos, message: action.payload.data.statusText };
 
-        case actionTypes.TODO_FILTER:
+        case actionTypes.FILTER_TODO:
             newTodos = state.todos.map((todo, i) => {
-                if (todo.Id == action.payload.Id) {
-                    return { ...todo, isChecked: action.payload.isChecked }
+                if (todo.id == action.payload.data.id) {
+                    return { ...todo, isChecked: action.payload.data.isChecked }
                 }
                 return todo
             })
-            return { todos: newTodos, filterTodos: newTodos };
+            return { todos: newTodos, message: action.payload.statusText };
 
         case actionTypes.GET_TODOS_API:
-            //action'dan gelen todoları(yani api'den gelen) todos state'ine set edip dönderiyoruz.
-            return { todos: action.payload, filterTodos: action.payload };
-
+            return { todos: action.payload };
         default:
             return state;
     }

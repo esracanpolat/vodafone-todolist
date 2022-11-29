@@ -1,35 +1,50 @@
 import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import { FormControl, Grid, TextField, Snackbar, Alert } from '@mui/material';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { todoAdd } from '../../redux/actions/todo/todoActions';
-import { v4 as uuidv4 } from 'uuid';
 import '../../styles/CreateTodo/CreateTodo.scss';
+import { postTodosApiRequest } from '../../services/todoService';
 
 
 export const CreateToDo = () => {
     const dispatch = useDispatch();
-    const [formValue, setFormValue] = useState();
-    const [warningFormValue, setWarningFormValue] = useState(false);
-    console.log(warningFormValue, "formValue", formValue);
+    const [formValue, setFormValue] = useState('');
+    const [validateFormValue, setValidateFormValue] = useState(false);
+    const [showMessage, setShowMessage] = useState(false);
+
+    const message = useSelector((state) => state.todos);
+
+
     function CreateTodoItem() {
-        dispatch(todoAdd({ Id: uuidv4(), todo: formValue }));
-        setFormValue();
-        setWarningFormValue(true)
-        setTimeout(() => {
-            setWarningFormValue(false)
-        }, 2000);
+        if (formValue) {
+            dispatch(postTodosApiRequest({ todo: formValue, isChecked: false }));
+            setFormValue('');
+            setShowMessage(true)
+            setValidateFormValue(false)
+
+        }
+        else {
+            setValidateFormValue(true)
+        }
     }
 
-    return (
-        <div className='CreateTodo-Contanier'>
-            <Snackbar open={warningFormValue}
-                // autoHideDuration={200}
-                onClose={() => setFormValue(false)}
-                message="Added Task Success" />
+    return (<>
+        <Snackbar
+            open={showMessage}
+            autoHideDuration={3000}
+            onClose={() => setShowMessage(false)}
+            message={message ? message.message : ''}
+        />
+        <div className='createTodo-contanier'>
             <Grid container paddingY={5} columns={12}>
                 <Grid md={10} xs={10} className="create-input-grid">
-                    <input placeholder='New Task' className="create-input" maxLength={200} helperText={warningFormValue === true && "Please enter your task"} onBlur={(e) => setFormValue(e.target.value)} />
+                    <div>
+                        <input placeholder='New Task' className="create-input" maxLength={200} value={formValue} onChange={(e) => setFormValue(e.target.value)} />
+                    </div>
+                    <div className={validateFormValue ? 'display-block' : "display-none"}>
+                        <small className='create-input-validate'>Plaese entry world </small>
+                    </div>
                 </Grid>
                 <Grid md={2} xs={2} className="create-button-grid">
                     <button type="submit" className='create-button' onClick={() => CreateTodoItem()}>
@@ -38,5 +53,6 @@ export const CreateToDo = () => {
                 </Grid>
             </Grid>
         </div>
+    </>
     )
 }

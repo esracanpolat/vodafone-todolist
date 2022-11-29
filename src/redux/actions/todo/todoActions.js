@@ -1,7 +1,8 @@
 import * as actionTypes from "./todoActionTypes";
 
-export const todoAdd = (todo) => ({ type: actionTypes.TODO_ADD, payload: todo })
-export const todoRemove = (todo) => ({ type: actionTypes.TODO_REMOVE, payload: todo })
-export const todoFilter = (todo) => ({ type: actionTypes.TODO_FILTER, payload: todo })
-//Apiden gelecek todoları bu action ile reducer'a göndereceğiz.
+export const addTodo = (todo) => ({ type: actionTypes.ADD_TODO, payload: todo })
+export const removeTodo = (todo) => ({ type: actionTypes.REMOVE_TODO, payload: todo })
+export const filterTodo = (todo) => ({ type: actionTypes.FILTER_TODO, payload: todo })
+
 export const getTodosApi = (todos) => ({ type: actionTypes.GET_TODOS_API, payload: todos })
+

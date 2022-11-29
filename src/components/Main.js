@@ -13,9 +13,7 @@ export const Main = () => {
                     <CreateToDo />
                 </Grid>
                 <Grid xs={16} className="main-align-contanier">
-                    <Box className='border-radius'>
-                        <ToDoList />
-                    </Box>
+                    <ToDoList />
                 </Grid>
             </Grid>
         </div>
