@@ -18,12 +18,6 @@ function App() {
           <Container>
             <Routes>
               <Route path='/' element={<Main />} />
-              {/* <Route path="/users">
-              <Users />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route> */}
             </Routes>
           </Container>
         </div>

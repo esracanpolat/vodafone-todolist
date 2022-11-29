@@ -7,20 +7,11 @@ export const Header = () => {
         <div>
             <AppBar position='relative'>
                 <Toolbar>
-                    {/* <IconButton
-                        edge='start'
-                        className={classes.menuButton}
-                        color='inherit'
-                        aria-label='menu'
-                    >
-                        <Menu />
-                    </IconButton> */}
                     <MenuItem>
-                        <Typography variant='h6'>
+                        <Typography variant='h6' href="/">
                             ToDo List
                         </Typography>
                     </MenuItem>
-
                 </Toolbar>
             </AppBar>
         </div>
