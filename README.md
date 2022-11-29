@@ -1,5 +1,5 @@
 //run DB
- vodafone-app\src\Data>
+ vodafone-todolist\Data>
  run  "json-server --watch db.json"
 
  //run project
