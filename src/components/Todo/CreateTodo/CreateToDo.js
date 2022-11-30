@@ -26,7 +26,7 @@ export const CreateToDo = () => {
     }
 
     return (<>
-        <SnackBarMessage showMessage={showMessage} />
+        <SnackBarMessage showMessage={showMessage} setShowMessage={setShowMessage} />
         <div className='createTodo-contanier'>
             <Grid container paddingY={5} columns={12}>
                 <Grid md={10} xs={10} className="create-input-grid">

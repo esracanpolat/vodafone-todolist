@@ -15,7 +15,7 @@ export default function DeleteButton({ todo }) {
     }
     return (
         <>
-            <SnackBarMessage showMessage={showMessage} />
+            <SnackBarMessage showMessage={showMessage} setShowMessage={setShowMessage} />
             <div className='table-cell-handle'>
                 <IconButton aria-label="delete" onClick={() => deleteItem()}>
                     <DeleteIcon className='delete-button' />

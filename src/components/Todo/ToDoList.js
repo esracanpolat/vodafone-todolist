@@ -15,7 +15,6 @@ export const ToDoList = () => {
     }, [])
 
 
-
     return (
         <div className='list-contanier'>
             <DataTable dataSource={todo.todos} />

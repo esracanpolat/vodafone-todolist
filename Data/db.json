@@ -3,7 +3,7 @@
     {
       "id": "1",
       "todo": "todos1",
-      "isChecked": false
+      "isChecked": true
     },
     {
       "id": "2",
@@ -13,12 +13,7 @@
     {
       "id": "3",
       "todo": "todos3",
-      "isChecked": true
-    },
-    {
-      "id": "_0-pCam",
-      "todo": "todo55",
-      "isChecked": true
+      "isChecked": false
     }
   ]
 }

@@ -14,7 +14,7 @@ export const CheckData = ({ todo }) => {
     }
     return (
         <>
-            <SnackBarMessage showMessage={showMessage} />
+            <SnackBarMessage showMessage={showMessage} setShowMessage={setShowMessage} />
             <div className='table-cell'>
                 <div>
                     <Checkbox
